@@ -2,10 +2,10 @@
   "name": "welcometo-card",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "server": "nodemon server.js",
-    "start": "nodemon server.js",
+    "server": "node server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently -k \"npm run server\" \"cd ../client && npm start \""
     
