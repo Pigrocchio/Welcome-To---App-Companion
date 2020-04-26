@@ -15,7 +15,7 @@ import CityPlanCardPage from './components/Card/CityPlanCard/CityPlanCard'
 import Prova from './components/list'
 import Welcome from './components/WelcomeGame/WelcomeGame/WelcomeGame'
 
-const socket = io('ws://localhost:5000'); // same as io.connect() || , {transports: ['websocket']}
+const socket = io(process.env.PORT); // same as io.connect() || , {transports: ['websocket']}
 function App() {
                  //     `
                  // „¨°º¤ø„¸¸„ø¤º°¨¸„ø¤º
