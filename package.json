@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    
+    "prova": "cd server && npm run server",
     "start": "concurrently -k \"cd server && npm run server\" \"cd client && npm run start\" "
   },
   "keywords": [],
