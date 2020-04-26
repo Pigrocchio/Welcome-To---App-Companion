@@ -1,12 +1,12 @@
 const express = require("express");
 const path = require("path");
 const socketIo = require("socket.io");
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 const app = express();
 
 // Serve the static files from the React app
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "/build")));
 
 app.use("/api", require("./routes/card.routes"));
 
