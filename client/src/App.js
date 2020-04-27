@@ -32,7 +32,7 @@ function App() {
                          <Navbar />
 
                          <Switch>
-                           <Route exact path="/" component={Welcome} />
+                           <Route exact path="/" component={Prova} />
 
                            <Route path="/fillable" component={CardDrawer} />
                            <Route
