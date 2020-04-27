@@ -6,8 +6,7 @@ import { Nav, Tab, Tabs } from "react-bootstrap";
 import FillablePdf from "../../../FillablePdf/FillablePdf";
 import Home from "../../../home";
 import Cards from "../../CardMethods/CardDrawer";
-
-
+import Rulebook from '../../../Rulespage/Rulespage'
 function navTab() {
 
 
@@ -48,29 +47,33 @@ function navTab() {
       <Tab
         eventKey="home"
         title={
-          <Link to="/home">
+          <Link to="/blank">
             <WelcomeGame></WelcomeGame>
           </Link>
         }
-      ></Tab>
+      >
+        <Home></Home>
+      </Tab>
       <Tab
         eventKey="card"
         title={
-          <Link to="/carddrawer" eventkey="disabled" disabled>
+          <Link to="/blank" eventkey="disabled" disabled>
             Card & Objective
           </Link>
         }
-      ></Tab>
+      >
+        <Cards></Cards>
+      </Tab>
       <Tab
         eventKey="rulebook"
         title={
-          <Link
-          
-            to="/rulebook" eventkey="disabled" disabled>
-            Rulebook
+          <Link to="/blank" eventkey="disabled" disabled>
+            Rules
           </Link>
         }
-      ></Tab>
+      >
+        <Rulebook></Rulebook>
+      </Tab>
       <Tab
         eventKey="contact"
         title={

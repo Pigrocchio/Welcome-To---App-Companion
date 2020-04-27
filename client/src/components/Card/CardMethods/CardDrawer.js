@@ -10,8 +10,6 @@ import { launchDeckNew, deck1, deck2, deck3 } from "./DeckBuilder";
 import BackCard from "../BackCard";
 import Deck from "../Deck";
 import ButtonComponent from "./Button";
-import CollapseButton from "../../CollpaseButton/CollapseButton";
-import PDF from "../CardImage/Welcome_To_Fillable_Sheet_PDF_v2.0.pdf";
 import SocketContext from "../../socket-contex";
 import CityPlanCard from "../CityPlanCard/CityPlanCard";
 import EmptyCard from "../CardImage/WelcomeToCardEmptyBack.jpg"
@@ -174,25 +172,7 @@ function CardDrawer() {
       <CityPlanCard></CityPlanCard>
       
       <div className="button-row">
-        <CollapseButton
-          variant="primary"
-          namebutton="Welcome To... Fillable PDF"
-          contenuto={
-            <>
-              <div className="fillable-pdf">
-                <div id="example-collapse-text">
-                  Based on Dobey's Welcome To Fillable Player Sheet PDF, I added
-                  in fences, pools, and estate markers (lines at the back of
-                  houses to mark when you used an estate for a City Plan).
-                </div>
-                <embed
-                  src={`${PDF}#zoom=80&scrollbar=0&toolbar=0&navpanes=0`}
-                ></embed>
               </div>
-            </>
-          }
-        ></CollapseButton>
-      </div>
     </>
   );
 }
