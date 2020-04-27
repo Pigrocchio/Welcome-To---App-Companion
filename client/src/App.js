@@ -12,8 +12,9 @@ import Navbar from "./components/Card/NavBar/Tab/TabNavbar";
 import CardDrawer from "./components/Card/CardMethods/CardDrawer";
 import RulesPage from "./components/Rulespage/Rulespage";
 import CityPlanCardPage from './components/Card/CityPlanCard/CityPlanCard'
-import Prova from './components/list'
-import Welcome from './components/WelcomeGame/WelcomeGame/WelcomeGame'
+import Home from './components/home'
+import FillablePdf from "./components/FillablePdf/FillablePdf"
+ 
 
 const socket = io(process.env.PORT); // same as io.connect() || , {transports: ['websocket']}
 function App() {
@@ -32,15 +33,16 @@ function App() {
                          <Navbar />
 
                          <Switch>
-                           <Route exact path="/" component={Prova} />
-
-                           <Route path="/fillable" component={CardDrawer} />
+                           <Route exact path="/" component={Home} />
+                           <Route path="/carddrawer" component={CardDrawer} />
                            <Route
                              path="/cityplan"
                              component={CityPlanCardPage}
                            />
                            <Route path="/rulebook" component={RulesPage} />
-                           <Route path="/list" component={Prova} />
+                           <Route path="/home" component={Home} />
+                           <Route path="/pdffilable" component={FillablePdf} />
+                           <Route path="/blank" />
                          </Switch>
                        </BrowserRouter>
                      </SocketContext.Provider>

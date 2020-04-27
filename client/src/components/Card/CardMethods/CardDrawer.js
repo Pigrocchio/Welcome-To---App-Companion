@@ -159,7 +159,7 @@ function CardDrawer() {
                   <img
                     src={EmptyCard}
                     alt="empty-card"
-                     className="empty-card "
+                    className="empty-card "
                   ></img>
                 ) : (
                   <>
@@ -171,30 +171,28 @@ function CardDrawer() {
           </Col>
         </Row>
       </Container>
-      <CollapseButton
-        variant="warning"
-        namebutton="City Plan Cards "
-        contenuto={<CityPlanCard></CityPlanCard>}
-      ></CollapseButton>
-
-      <CollapseButton
-        variant="primary"
-        namebutton="Welcome To... Fillable PDF"
-        contenuto={
-          <>
-            <div className="fillable-pdf">
-              <div id="example-collapse-text">
-                Based on Dobey's Welcome To Fillable Player Sheet PDF, I added
-                in fences, pools, and estate markers (lines at the back of
-                houses to mark when you used an estate for a City Plan).
+      <CityPlanCard></CityPlanCard>
+      
+      <div className="button-row">
+        <CollapseButton
+          variant="primary"
+          namebutton="Welcome To... Fillable PDF"
+          contenuto={
+            <>
+              <div className="fillable-pdf">
+                <div id="example-collapse-text">
+                  Based on Dobey's Welcome To Fillable Player Sheet PDF, I added
+                  in fences, pools, and estate markers (lines at the back of
+                  houses to mark when you used an estate for a City Plan).
+                </div>
+                <embed
+                  src={`${PDF}#zoom=80&scrollbar=0&toolbar=0&navpanes=0`}
+                ></embed>
               </div>
-              <embed
-                src={`${PDF}#zoom=80&scrollbar=0&toolbar=0&navpanes=0`}
-              ></embed>
-            </div>
-          </>
-        }
-      ></CollapseButton>
+            </>
+          }
+        ></CollapseButton>
+      </div>
     </>
   );
 }

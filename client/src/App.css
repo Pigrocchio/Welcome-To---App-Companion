@@ -184,8 +184,7 @@ button {
 /*  CARD  IMAGE CSS */
 .card {
   border-radius: 10px;
-  height: 385px;
-  width: 275px;
+  
   margin: 30px 0 30px 0;
 }
 
@@ -199,6 +198,12 @@ button {
   margin-right: -15px;
   margin-left: -15px;
   margin-bottom: 10px;
+  justify-content: center
+}
+
+.col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 24.333333%;
 }
 
 

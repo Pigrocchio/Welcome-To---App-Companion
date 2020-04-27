@@ -38,34 +38,33 @@ export default function CityPlanCardPage() {
 
   return (
     <Container>
-      <ButtonComponent
-        variant="primary"
-        text="Draw City Card Card"
-        action={handleCardDraw}
-      />
+      <div className="button-row">
+        <ButtonComponent
+          variant="primary"
+          text="Draw City Card Card"
+          action={handleCardDraw}
+        />
+      </div>
       <Row>
         {CityPlanCardList.map((x, index) => {
           return (
-            <Col key={index}>
-              <Card
-                style={{
-                  width: "10rem",
-                  height: "auto",
-                  color: "rgb(189, 34, 48)",
-                }}
-              >
-                <Card.Img
-                  variant="top"
-                  src={require(`./citycardplanimage/${x.imageUrl}`)}
-                />
-                <Card.Body>
-                  <Card.Title style={{ "fontSize": "14px" }}>
-                    City Plan Objective n.{index + 1}
-                  </Card.Title>
-                  <Card.Text></Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
+            <div>
+              <Col key={index} >
+                <Card>
+                  <Card.Img
+                    className="card-back"
+                    variant="top"
+                    src={require(`./citycardplanimage/${x.imageUrl}`)}
+                  />
+                  <Card.Body>
+                    <Card.Title style={{ fontSize: "14px" }}>
+                      City Plan Objective n.{index + 1}
+                    </Card.Title>
+                    <Card.Text></Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </div>
           );
         })}
       </Row>
