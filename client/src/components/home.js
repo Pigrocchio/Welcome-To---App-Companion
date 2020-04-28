@@ -29,28 +29,35 @@ class List extends Component {
 
     return (
       <>
-       
-          <div className="jumbotron text-white jumbotron-image shadow imageg">
-            <p className="bg-gradient ">
-              Welcome To... plays like a roll-and-write dice game in which you
-              mark results on a score-sheet...but without dice. Instead you flip
-              cards from three piles to make three different action sets with
-              both a house number and a corresponding action from which everyone
-              chooses one. You use the number to fill in a house on your street
-              in numerical order. Then you take the action to increase the point
-              value of estates you build or score points at the end for building
-              parks and pools. Players also have the option of taking actions to
-              alter or duplicate their house numbers. And everyone is racing to
-              be the first to complete public goals. There's lots to do and many
-              paths to becoming the best suburban architect in Welcome To...!
-            </p>
-            <a
-              href="https://bootstrapious.com/snippets"
-              class="btn btn-primary"
-            >
-              More on Welcome To Game
-            </a>
-          </div>
+        <div className="jumbotron text-white jumbotron-image shadow imageg">
+          <p className="bg-gradient ">
+            Welcome To... plays like a roll-and-write dice game in which you
+            mark results on a score-sheet...but without dice.
+          </p>
+          <p>
+            Instead you flip cards from three piles to make three different
+            action sets with both a house number and a corresponding action from
+            which everyone chooses one. You use the number to fill in a house on
+            your street in numerical order.
+          </p>
+          <p>
+            Then you take the action to increase the point value of estates you
+            build or score points at the end for building parks and pools.
+            Players also have the option of taking actions to alter or duplicate
+            their house numbers.
+          </p>
+          <p>
+            And everyone is racing to be the first to complete public goals.
+            There's lots to do and many paths to becoming the best suburban
+            architect in Welcome To...!
+          </p>
+          <a
+            href="https://boardgamegeek.com/boardgame/233867/welcome"
+            className="btn btn-danger"
+          >
+            More on Welcome To Game
+          </a>
+        </div>
       </>
     );
   }

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./WelcomeGame.css";
 
 
 
@@ -11,8 +10,8 @@ render() {
     return (
         <>
             <div className="title">
-        <h2>Welcome To</h2>
-                <p>companion card app</p>
+        <h2>Welcome To - Companion App</h2>
+                
                 </div>
             </>
     );

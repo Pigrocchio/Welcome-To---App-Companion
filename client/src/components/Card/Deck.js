@@ -1,7 +1,7 @@
 import React from "react";
 import deckimage from "../Card/CardImage/WelcomeToCardSampleBack.jpg";
 import EmptyCard from './CardImage/WelcomeToCardEmptyBack.jpg'
-
+import  './Card.css'
 
 function Deck(prop) {
   // To split the number into two div in rendering

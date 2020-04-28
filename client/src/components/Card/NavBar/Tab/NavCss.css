@@ -1,0 +1,12 @@
+/* NAV BAR*/
+.nav-item {
+  margin-right: 15px;
+}
+
+.nav-tabs, h2,
+a {
+  align-items: center;
+  font-family: "Lobster", cursive;
+  color: #bd2130;
+  font-size: 0.9em;
+}

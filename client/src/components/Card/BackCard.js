@@ -7,7 +7,7 @@ import Swimpool from "../Card/CardImage/WelcomeToCardSwimpoll.jpg";
 import Market from "../Card/CardImage/WelcomeToCardMarket.jpg";
 
 
-
+import "./Card.css";
 
 
 function BackCard(prop) {
