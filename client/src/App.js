@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import SocketContext from './components/socket-contex'
 import * as io from "socket.io-client";
 
@@ -33,7 +33,7 @@ function App() {
                          <Navbar />
 
                          <Switch>
-                           <Route exact path="/" component={Home} />
+                           <Redirect from="*" to="/home" />
                            <Route path="/carddrawer" component={CardDrawer} />
                            <Route
                              path="/cityplan"
