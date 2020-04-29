@@ -5,11 +5,28 @@ export default function RulesPage() {
     return (
       <>
         <Container>
+          <p className="bg-gradient ">
+            Welcome To... plays like a roll-and-write dice game in which you
+            mark results on a score-sheet...but without dice.
+          </p>
           <p>
-            <strong>
-              <em>Welcome To…</em>
-            </strong>
-            <strong> </strong>
+            Instead you flip cards from three piles to make three different
+            action sets with both a house number and a corresponding action from
+            which everyone chooses one. You use the number to fill in a house on
+            your street in numerical order.
+          </p>
+          <p>
+            Then you take the action to increase the point value of estates you
+            build or score points at the end for building parks and pools.
+            Players also have the option of taking actions to alter or duplicate
+            their house numbers.
+          </p>
+          <p>
+            And everyone is racing to be the first to complete public goals.
+            There's lots to do and many paths to becoming the best suburban
+            architect in Welcome To...!
+          </p>
+          <p>
             <strong>Effects Reference Sheet</strong>
           </p>
           <p>
@@ -174,13 +191,20 @@ export default function RulesPage() {
             <strong></strong>
           </p>
           <p>
-            <strong>Game End – </strong>
-            1 - Player fills in every house; 2 - Player completes all 3 City
-            Plans; 3 - Player has 3 Building Permit Refusals.
+            <strong>Game End – </strong>1 - Player fills in every house; 2 -
+            Player completes all 3 City Plans; 3 - Player has 3 Building Permit
+            Refusals.
           </p>
+
+          <a
+            href="https://boardgamegeek.com/boardgame/233867/welcome"
+            className="btn btn-danger"
+          >
+            More on Welcome To Game
+          </a>
         </Container>
       </>
-    )
+    );
 
 }
 

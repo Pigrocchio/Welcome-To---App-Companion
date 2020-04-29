@@ -10,6 +10,8 @@ html { font-size: calc(1em + 1vw) }
   --marginLow: 13% 17% 0% 0%;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 @media only screen and (min-width: 114px) and (max-width: 768px) {
@@ -46,10 +48,15 @@ html { font-size: calc(1em + 1vw) }
 
 h1,
 h4,
-p,
 button {
   font-family: "Lobster", cursive;
   color: #bd2130;
+  
+}
+
+p, a, li {
+  font-family:'Open Sans', sans-serif;
+  color: #495057;
 }
 
 .background {
@@ -86,4 +93,8 @@ button {
   background-image: linear-gradient(rgba(255, 255, 255), #dee2e65c),
     url("./components/Card//CardImage/welcometogamebackground.jpg");
   height: auto;
+}
+
+.ombra {
+  box-shadow: 6px 4px 21px 0px rgba(0,0,0,0.75);
 }
