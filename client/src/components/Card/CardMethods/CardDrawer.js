@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "../Card.css";
+
 //Method
 import drawCard from "./DrawCard";
 import "../../../App.css";
@@ -15,7 +16,11 @@ import CityPlanCard from "../CityPlanCard/CityPlanCard";
 import EmptyCard from "../CardImage/WelcomeToCardEmptyBack.jpg"
 
 
-function CardDrawer() {
+let players = []
+
+
+
+function CardDrawer(props) {
   //Deck1
   const [cardDraw, setcardDraw] = useState([]); // container for the  drwed back of the card
   const [deckOne, setDeck] = useState([]); // remaining drawed card of the total deck
@@ -29,8 +34,26 @@ function CardDrawer() {
   const [deckThree, setDeckThree] = useState([]);
 
   const socket = useContext(SocketContext);
+  
+    const [playresInRoom, SetplayresInRoom] = useState([]);
+console.log("----->", props.location.Playerjoined);
+players.push(props.location.Playerjoined);
+console.log('redirect', props.location.Playerjoined);
 
+
+
+
+  
+  //Capture the last part of URL
+ const Gameid = new URL(window.location.href).pathname
+   .split("/")
+   .filter(Boolean)
+   .pop();
+  console.log(Gameid);
+  
+    
   useEffect(() => {
+ 
     socket.on(
       "MAINDECK_CARD_BUTTON",
       (res1, res2, res3, deck1, deck2, deck3) => {
@@ -58,7 +81,7 @@ function CardDrawer() {
       setcardDrawTwo([]);
       setcardDrawThree([]);
     });
-  }, [socket]);
+  }, []);
 
 //Draw one card form stater deck
   let handleCardDraw = () => {
@@ -66,7 +89,16 @@ function CardDrawer() {
     let res2 = drawCard(deck2, 27);
     let res3 = drawCard(deck3, 27);
 
-    socket.emit("MAINDECK_CARD_BUTTON", res1, res2, res3, deck1, deck2, deck3);
+    socket.emit(
+      "MAINDECK_CARD_BUTTON",
+      res1,
+      res2,
+      res3,
+      deck1,
+      deck2,
+      deck3,
+      Gameid
+    );
   };
 
   // Re-Shuffle a initial starter deck
@@ -74,7 +106,7 @@ function CardDrawer() {
   let reShuffleDeck = () => {
     
 
-    socket.emit("RE-SHUFFLE", deck1, deck2, deck3);
+    socket.emit("RE-SHUFFLE", deck1, deck2, deck3, Gameid);
 
 
   };
@@ -82,6 +114,8 @@ function CardDrawer() {
   return (
     <>
       <Container>
+        <h2>Game Room number {Gameid}</h2>
+        
         <div className="button-row">
           <div></div>
           <div>
@@ -169,10 +203,10 @@ function CardDrawer() {
           </Col>
         </Row>
       </Container>
-      <CityPlanCard></CityPlanCard>
-      
-      <div className="button-row">
-              </div>
+
+      <CityPlanCard roomId={Gameid}></CityPlanCard>
+
+      <div className="button-row"></div>
     </>
   );
 }

@@ -4,9 +4,11 @@ import { Row, Col, Container } from "react-bootstrap";
 import SocketContext from "../../socket-contex";
 import ButtonComponent from "../CardMethods/Button";
 
-export default function CityPlanCardPage() {
+export default function CityPlanCardPage (props) {
   const [CityPlanCardList, setCityPlanCardList] = useState([]);
   const socket = useContext(SocketContext);
+
+let roomId = props.roomId
 
   useEffect(() => {
     socket.on("CITY_CARD_EMIT", (data) => {
@@ -29,7 +31,7 @@ export default function CityPlanCardPage() {
   let handleCardDraw = () => {
     getList()
       .then((data) => {
-        socket.emit("CITY_PLAN_BUTTON", data);
+        socket.emit("CITY_PLAN_BUTTON", data, roomId);
         return data;
       })
       .then((data) => setCityPlanCardList([...data]))

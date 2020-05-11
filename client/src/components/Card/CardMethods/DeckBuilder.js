@@ -72,7 +72,7 @@ function launchDeckNew() {
 
   deck2 = deck.splice(0, 27);
 
-  deck3 = deck;
+  deck3 = deck.splice(0, 27);
 
   // console.log("DECK CREATO " + deck1);
 }

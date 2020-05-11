@@ -67,6 +67,7 @@ p, a, li {
 
 /* Title */
 .title {
+  
   margin-top: 10px;
   display: flex;
   margin-top: 10px;
@@ -79,6 +80,10 @@ p, a, li {
   margin-left: 10px;
 }
 
+
+.title h2 {
+  color:  whitesmoke;
+}
 /* BUTTON */
 .button-row {
   display: flex;

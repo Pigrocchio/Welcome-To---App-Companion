@@ -1,32 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import WelcomeGame from "../../../WelcomeGame/WelcomeGame/WelcomeGame";
 import { Link } from "react-router-dom";
-import { Nav, Tab, Tabs } from "react-bootstrap";
-import FillablePdf from "../../../FillablePdf/FillablePdf";
+import { Nav, Navbar, Tab, Tabs } from "react-bootstrap";
+import FillablePdf from '../../../FillablePdf/FillablePdf';
 import Home from "../../../home";
 import Cards from "../../CardMethods/CardDrawer";
 import Rulebook from "../../../Rulespage/Rulespage";
 import './NavCss.css'
+import CreateGame from '../../../MainRoom/MainRoom'
 
+function NavTab() {
 
-function navTab() {
+  const history = useHistory();
+ const [key, setKey] = useState('home');
+
   return (
-    <Tabs defaultActiveKey="home" transition={false} id="noanim-tab-example">
-      <Tab eventKey="home" title={<WelcomeGame></WelcomeGame>}>
-        <Home></Home>
-      </Tab>
-      <Tab eventKey="card" title="Card Drawer">
-        <Cards></Cards>
-      </Tab>
-      <Tab eventKey="rulebook" title="Rules">
-        <Rulebook></Rulebook>
-      </Tab>
-      <Tab eventKey="PDF" title="PDF Sheet">
-        <FillablePdf></FillablePdf>
-      </Tab>
-    </Tabs>
+    //   <Tabs activeKey={key} onSelect={(k) => setKey(k)}>
+    //     <Tab
+    //       eventKey="home"
+    //       title={
+    //         <Nav.Link as={Link} to="/">
+    //           Home
+    //         </Nav.Link>
+    //       }
+    //     ></Tab>
+    //     <Tab eventKey="profile" title="PDF">
+    //       <FillablePdf />
+    //     </Tab>
+    //     <Tab
+    //       eventKey="Rulebook"
+    //       title={
+    //         <Nav.Link as={Link} to="/rulebook">
+    //           Rulebook
+    //         </Nav.Link>
+    //       }
+    //     ></Tab>
+    //     <Tab
+    //       eventKey="CreateGame"
+    //       title={
+    //         <Nav.Link as={Link} to="/creategame">
+    //         Create a Game
+    //         </Nav.Link>
+    //       }
+    //     >
+
+    //     </Tab>
+    //   </Tabs>
+
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      sticky="top"
+      className="NavWelcome"
+      bg="danger"
+      variant="dark"
+    >
+      <Navbar.Brand href="#home">
+        <Nav.Link as={Link} to="/">
+          <WelcomeGame></WelcomeGame>
+        </Nav.Link>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
+          
+          <Nav.Link as={Link} to={"/pdffilable"}>
+            Pdf Sheet
+          </Nav.Link>
+          <Nav.Link as={Link} to="/rulebook">
+            Rulebook
+          </Nav.Link>
+          <Nav.Link as={Link} to="/creategame">
+            Create a Game
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
-export default navTab;
+
+
+
+
+
+
+  
+  
+
+
+export default NavTab;

@@ -10,3 +10,11 @@ a {
   color: #bd2130;
   font-size: 0.9em;
 }
+
+.NavWelcome {
+  flex-flow: wrap;
+}
+
+.nav-link {
+  padding: 0px
+}

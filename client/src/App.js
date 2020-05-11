@@ -1,30 +1,31 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+  Redirect,
+  withRouter,
+} from "react-router-dom";
 import SocketContext from './components/socket-contex'
 import * as io from "socket.io-client";
 
 
 
-
 //Component
 
+import JoinGame from './components/JoinGame/JoinGame'
 import Navbar from "./components/Card/NavBar/Tab/TabNavbar";
 import CardDrawer from "./components/Card/CardMethods/CardDrawer";
 import RulesPage from "./components/Rulespage/Rulespage";
 import CityPlanCardPage from './components/Card/CityPlanCard/CityPlanCard'
 import Home from './components/home'
 import FillablePdf from "./components/FillablePdf/FillablePdf"
+import MainRoom from './components/MainRoom/MainRoom'
  
 
 const socket = io(process.env.PORT); // same as io.connect() || , {transports: ['websocket']}
 function App() {
-                 //     `
-                 // „¨°º¤ø„¸¸„ø¤º°¨¸„ø¤º
-                 // ¨°º¤ø„¸DAFT¸„ø¤º°¨
-                 // „ø¤º°¨ PUNK¨°º¤ø
-                 // ¸„ø¤º°¨¸„ø¤ºº¤ø„¸¨°º¤
-
-                 // `
+              
 
                  return (
                    <>
@@ -33,16 +34,19 @@ function App() {
                          <Navbar />
 
                          <Switch>
-                           <Redirect from="*" to="/home" />
                            <Route path="/carddrawer" component={CardDrawer} />
                            <Route
                              path="/cityplan"
                              component={CityPlanCardPage}
                            />
+
                            <Route path="/rulebook" component={RulesPage} />
-                           <Route path="/home" component={Home} />
+                           <Route exact path="/" component={Home} />
                            <Route path="/pdffilable" component={FillablePdf} />
+                           <Route path="/joingame" component={JoinGame} />
+                           <Route path="/creategame" component={MainRoom} />
                            <Route path="/blank" />
+                           
                          </Switch>
                        </BrowserRouter>
                      </SocketContext.Provider>

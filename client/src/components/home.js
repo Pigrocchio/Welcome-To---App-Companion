@@ -5,6 +5,9 @@ import ImageSlider1 from './Card/CardImage/welcometoslider.jpg'
 import BoxArtwork from './Card/CardImage/pic3761012.jpg'
 import ImageHome from './Card/CardImage/board.png'
 
+
+
+
 class List extends Component {
   static contextType = SocketContext;
   constructor(props) {
@@ -57,6 +60,10 @@ class List extends Component {
               </Col>
             </Row>
             <Row>
+              
+                
+              
+
               <Col lg={12}>
                 <p>
                   So the following days I wanted to try to take in hand some

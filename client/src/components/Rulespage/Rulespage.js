@@ -1,13 +1,26 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
+import './Rulespage.css'
+
+// Icon Images
+import IconFences from '../Card/CardImage/IconFences.png'
+import IconRealEstate from '../Card/CardImage/IconMarket.png'
+import IconPark from "../Card/CardImage/IconPark.png";
+import IconSwimm from "../Card/CardImage/IconSwimm.png";
+import IconWork from "../Card/CardImage/IconWork.png";
+import IconBis from "../Card/CardImage/IconBIS.png";
+import GoalCard from "../Card/CardImage/goalcitycard.jpg";
+
+
 export default function RulesPage() {
     return (
       <>
         <Container>
+          <br></br>
           <p className="bg-gradient ">
-            Welcome To... plays like a roll-and-write dice game in which you
-            mark results on a score-sheet...but without dice.
+            <b>Welcome To..</b>. plays like a <b>roll-and-write dice game</b> in
+            which you mark results on a score-sheet...but without dice.
           </p>
           <p>
             Instead you flip cards from three piles to make three different
@@ -21,11 +34,7 @@ export default function RulesPage() {
             Players also have the option of taking actions to alter or duplicate
             their house numbers.
           </p>
-          <p>
-            And everyone is racing to be the first to complete public goals.
-            There's lots to do and many paths to becoming the best suburban
-            architect in Welcome To...!
-          </p>
+
           <p>
             <strong>Effects Reference Sheet</strong>
           </p>
@@ -37,7 +46,8 @@ export default function RulesPage() {
           </p>
           <p>
             <strong>
-              Surveyor (White Fence) – Creates Estates to meet City Plan goals
+              Surveyor <img className="IconSmall" src={IconFences} /> – Creates
+              Estates to meet City Plan goals
             </strong>
           </p>
           <ul>
@@ -56,7 +66,9 @@ export default function RulesPage() {
           </ul>
           <p>
             <strong>
-              Real Estate Agent (Purple Coins) – Increases Estate Value
+              Real Estate Agent{" "}
+              <img className="IconSmall" src={IconRealEstate} /> – Increases
+              Estate Value
             </strong>
           </p>
           <ul>
@@ -69,7 +81,10 @@ export default function RulesPage() {
             </li>
           </ul>
           <p>
-            <strong>Landscaper (Green Park) – Increases Value of Street</strong>
+            <strong>
+              Landscaper <img className="IconSmall" src={IconPark} /> –
+              Increases Value of Street
+            </strong>
           </p>
           <ul>
             <li>Write house number on any available house</li>
@@ -80,8 +95,8 @@ export default function RulesPage() {
           </ul>
           <p>
             <strong>
-              Pool Manufacturer (Blue Pool) – Increases Value of House with
-              Planned Pools
+              Pool Manufacturer <img className="IconSmall" src={IconSwimm} /> –
+              Increases Value of House with Planned Pools
             </strong>
           </p>
           <ul>
@@ -93,8 +108,8 @@ export default function RulesPage() {
           </ul>
           <p>
             <strong>
-              Temp Agency (Orange Road Block) – Allows adjustment to House
-              Number
+              Temp Agency <img className="IconSmall" src={IconWork} /> – Allows
+              adjustment to House Number
             </strong>
           </p>
           <ul>
@@ -123,7 +138,8 @@ export default function RulesPage() {
           </ul>
           <p>
             <strong>
-              Bis (Red Mailbox) – Allows for Duplicate Numbers Side-by-Side
+              Bis <img className="IconSmall" src={IconBis} /> – Allows for
+              Duplicate Numbers Side-by-Side
             </strong>
           </p>
           <ul>
@@ -158,8 +174,10 @@ export default function RulesPage() {
             points
           </p>
           <p>
-            <strong>City Plans (Goal Cards)</strong>
+            <strong>City Plans (Goal Cards)</strong>{" "}
+            <img className="IconSmall" src={GoalCard} />
           </p>
+
           <ul>
             <li>
               Once a City Plan card has been achieved, Player marks highest
