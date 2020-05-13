@@ -13,72 +13,73 @@ import CreateGame from '../../../MainRoom/MainRoom'
 
 function NavTab() {
 
-  const history = useHistory();
- const [key, setKey] = useState('home');
+
 
   return (
-    //   <Tabs activeKey={key} onSelect={(k) => setKey(k)}>
-    //     <Tab
-    //       eventKey="home"
-    //       title={
-    //         <Nav.Link as={Link} to="/">
-    //           Home
-    //         </Nav.Link>
-    //       }
-    //     ></Tab>
-    //     <Tab eventKey="profile" title="PDF">
-    //       <FillablePdf />
-    //     </Tab>
-    //     <Tab
-    //       eventKey="Rulebook"
-    //       title={
-    //         <Nav.Link as={Link} to="/rulebook">
-    //           Rulebook
-    //         </Nav.Link>
-    //       }
-    //     ></Tab>
-    //     <Tab
-    //       eventKey="CreateGame"
-    //       title={
-    //         <Nav.Link as={Link} to="/creategame">
-    //         Create a Game
-    //         </Nav.Link>
-    //       }
-    //     >
+      // <Tabs >
+      //   <Tab
+      //     eventKey="home"
+      //     title={
+      //       <Nav.Link as={Link} to="/">
+      //         Home
+      //       </Nav.Link>
+      //     }
+      //   ></Tab>
+      //   <Tab eventKey="profile" title="PDF">
+      //     <FillablePdf />
+      //   </Tab>
+      //   <Tab
+      //     eventKey="Rulebook"
+      //     title={
+      //       <Nav.Link as={Link} to="/rulebook">
+      //         Rulebook
+      //       </Nav.Link>
+      //     }
+      //   ></Tab>
+      //   <Tab
+      //     eventKey="CreateGame"
+      //     title={
+      //       <Nav.Link as={Link} to="/creategame">
+      //       Create a Game
+      //       </Nav.Link>
+      //     }
+      //   >
 
-    //     </Tab>
-    //   </Tabs>
+      //  </Tab>
+      //  </Tabs>
+    <>
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        sticky="top"
+        className="NavWelcome"
+        bg="danger"
+        variant="dark"
+      >
+        <Navbar.Brand href="#home">
+          <Nav.Link as={Link} to="/">
+            <WelcomeGame></WelcomeGame>
+          </Nav.Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      sticky="top"
-      className="NavWelcome"
-      bg="danger"
-      variant="dark"
-    >
-      <Navbar.Brand href="#home">
-        <Nav.Link as={Link} to="/">
-          <WelcomeGame></WelcomeGame>
-        </Nav.Link>
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link></Nav.Link>
 
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-          
-          <Nav.Link as={Link} to={"/pdffilable"}>
-            Pdf Sheet
-          </Nav.Link>
-          <Nav.Link as={Link} to="/rulebook">
-            Rulebook
-          </Nav.Link>
-          <Nav.Link as={Link} to="/creategame">
-            Create a Game
-          </Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+            <Nav.Link as={Link} to={"/pdffilable"}>
+              Pdf Sheet
+            </Nav.Link>
+            <Nav.Link as={Link} to="/rulebook">
+              Rulebook
+            </Nav.Link>
+            <Nav.Link as={Link} to="/creategame">
+              Create a Game
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </>
   );
 }
 

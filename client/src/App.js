@@ -21,7 +21,7 @@ import CityPlanCardPage from './components/Card/CityPlanCard/CityPlanCard'
 import Home from './components/home'
 import FillablePdf from "./components/FillablePdf/FillablePdf"
 import MainRoom from './components/MainRoom/MainRoom'
- 
+import NotFoundPage  from './components/NotFoundPage'
 
 const socket = io(process.env.PORT); // same as io.connect() || , {transports: ['websocket']}
 function App() {
@@ -39,14 +39,15 @@ function App() {
                              path="/cityplan"
                              component={CityPlanCardPage}
                            />
-
                            <Route path="/rulebook" component={RulesPage} />
                            <Route exact path="/" component={Home} />
-                           <Route path="/pdffilable" component={FillablePdf} />
+                           <Route
+                             exact path="/pdffilable"
+                             component={FillablePdf}
+                           />
                            <Route path="/joingame" component={JoinGame} />
                            <Route path="/creategame" component={MainRoom} />
-                           <Route path="/blank" />
-                           
+                           <Route component={NotFoundPage} />
                          </Switch>
                        </BrowserRouter>
                      </SocketContext.Provider>

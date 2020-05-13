@@ -10,12 +10,12 @@ export default function CityPlanCardPage (props) {
 
 let roomId = props.roomId
 
-  useEffect(() => {
-    socket.on("CITY_CARD_EMIT", (data) => {
-      console.log("CLIENT: DATI ARRIVO SERVER");
-      setCityPlanCardList([...data]);
-    });
-  }, [socket]);
+  // useEffect(() => {
+  //   socket.on("CITY_CARD_EMIT", (data) => {
+  //     console.log("CLIENT: DATI ARRIVO SERVER");
+  //     setCityPlanCardList([...data]);
+  //   });
+  // }, [socket]);
 
   // Retrieves the list of items from the Express app
   const getList = async () => {
