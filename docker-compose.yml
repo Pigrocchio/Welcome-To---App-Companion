@@ -1,0 +1,23 @@
+version: "3"
+services:
+    frontend:
+        container_name: welcometo_client
+        build:
+            context: ./client
+            dockerfile: Dockerfile
+        image: paolo/welcometo_client
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./client:/usr/src/app
+        stdin_open: true
+    backend:
+        container_name: welcometo_server
+        build:
+            context: ./server
+            dockerfile: Dockerfile
+        image: paolo/welcometo_server
+        ports:
+            - "5000:5000"
+        volumes:
+            - ./server:/usr/src/app

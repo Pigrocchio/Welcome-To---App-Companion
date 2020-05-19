@@ -7,6 +7,7 @@ function CollapseButton(props) {
 
   return (
     <>
+      <div className="button-row">
       <Button
         variant={props.variant}
         onClick={() => setOpen(!open)}
@@ -14,7 +15,8 @@ function CollapseButton(props) {
         aria-expanded={open}
       >
         {props.namebutton}
-      </Button>
+        </Button>
+        </div>
       <Collapse in={open}>
         <div id="example-collapse-text">
           

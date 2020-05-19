@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Collapse } from "react-bootstrap";
 import "../Card.css";
 
 //Method
@@ -14,7 +14,8 @@ import ButtonComponent from "./Button";
 import SocketContext from "../../socket-contex";
 import CityPlanCard from "../CityPlanCard/CityPlanCard";
 import EmptyCard from "../CardImage/WelcomeToCardEmptyBack.jpg"
-
+import CollapseButton from '../../CollpaseButton/CollapseButton'
+import PDF from '../../FillablePdf/FillablePdf'
 
 let players = []
 
@@ -115,7 +116,7 @@ console.log('redirect', props.location.Playerjoined);
     <>
       <Container>
         <h2>Game Room number {Gameid}</h2>
-        
+
         <div className="button-row">
           <div></div>
           <div>
@@ -204,9 +205,23 @@ console.log('redirect', props.location.Playerjoined);
         </Row>
       </Container>
 
-      <CityPlanCard roomId={Gameid}></CityPlanCard>
+      <div>
+        
+        <CityPlanCard roomId={Gameid}></CityPlanCard>
+      </div>
 
-      <div className="button-row"></div>
+      <div style={{ "text-align": "center" }}>
+        <p>Click to mark results on editable PDF</p>
+      </div>
+      <div className="button-row">
+        <div>
+          <CollapseButton
+            variant="info"
+            namebutton="Open Pdf"
+            contenuto={<PDF></PDF>}
+          ></CollapseButton>
+        </div>
+      </div>
     </>
   );
 }

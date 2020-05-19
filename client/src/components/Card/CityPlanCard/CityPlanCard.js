@@ -4,18 +4,19 @@ import { Row, Col, Container } from "react-bootstrap";
 import SocketContext from "../../socket-contex";
 import ButtonComponent from "../CardMethods/Button";
 
+
 export default function CityPlanCardPage (props) {
   const [CityPlanCardList, setCityPlanCardList] = useState([]);
   const socket = useContext(SocketContext);
 
 let roomId = props.roomId
 
-  // useEffect(() => {
-  //   socket.on("CITY_CARD_EMIT", (data) => {
-  //     console.log("CLIENT: DATI ARRIVO SERVER");
-  //     setCityPlanCardList([...data]);
-  //   });
-  // }, [socket]);
+  useEffect(() => {
+    socket.on("CITY_CARD_EMIT", (data) => {
+      console.log("CLIENT: DATI ARRIVO SERVER");
+      setCityPlanCardList([...data]);
+    });
+  }, [socket]);
 
   // Retrieves the list of items from the Express app
   const getList = async () => {
@@ -40,6 +41,9 @@ let roomId = props.roomId
 
   return (
     <Container>
+      <div style={{ "text-align": "center" }}>
+        <p>Click to draw City Plan card objective</p>
+      </div>
       <div className="button-row">
         <ButtonComponent
           variant="primary"
@@ -51,10 +55,10 @@ let roomId = props.roomId
         {CityPlanCardList.map((x, index) => {
           return (
             <div>
-              <Col key={index} >
+              <Col key={index}>
                 <Card>
                   <Card.Img
-                    className="card-back"
+                    className="cardimgtop"
                     variant="top"
                     src={require(`./citycardplanimage/${x.imageUrl}`)}
                   />

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 
 import WelcomeGame from "../../../WelcomeGame/WelcomeGame/WelcomeGame";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { Nav, Navbar, Tab, Tabs } from "react-bootstrap";
 import FillablePdf from '../../../FillablePdf/FillablePdf';
 import Home from "../../../home";
@@ -16,37 +15,37 @@ function NavTab() {
 
 
   return (
-      // <Tabs >
-      //   <Tab
-      //     eventKey="home"
-      //     title={
-      //       <Nav.Link as={Link} to="/">
-      //         Home
-      //       </Nav.Link>
-      //     }
-      //   ></Tab>
-      //   <Tab eventKey="profile" title="PDF">
-      //     <FillablePdf />
-      //   </Tab>
-      //   <Tab
-      //     eventKey="Rulebook"
-      //     title={
-      //       <Nav.Link as={Link} to="/rulebook">
-      //         Rulebook
-      //       </Nav.Link>
-      //     }
-      //   ></Tab>
-      //   <Tab
-      //     eventKey="CreateGame"
-      //     title={
-      //       <Nav.Link as={Link} to="/creategame">
-      //       Create a Game
-      //       </Nav.Link>
-      //     }
-      //   >
+    // <Tabs >
+    //   <Tab
+    //     eventKey="home"
+    //     title={
+    //       <Nav.Link as={Link} to="/">
+    //         Home
+    //       </Nav.Link>
+    //     }
+    //   ></Tab>
+    //   <Tab eventKey="profile" title="PDF">
+    //     <FillablePdf />
+    //   </Tab>
+    //   <Tab
+    //     eventKey="Rulebook"
+    //     title={
+    //       <Nav.Link as={Link} to="/rulebook">
+    //         Rulebook
+    //       </Nav.Link>
+    //     }
+    //   ></Tab>
+    //   <Tab
+    //     eventKey="CreateGame"
+    //     title={
+    //       <Nav.Link as={Link} to="/creategame">
+    //       Create a Game
+    //       </Nav.Link>
+    //     }
+    //   >
 
-      //  </Tab>
-      //  </Tabs>
+    //  </Tab>
+    //  </Tabs>
     <>
       <Navbar
         collapseOnSelect
@@ -66,9 +65,9 @@ function NavTab() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link></Nav.Link>
-
+           
             <Nav.Link as={Link} to={"/pdffilable"}>
-              Pdf Sheet
+             PDF
             </Nav.Link>
             <Nav.Link as={Link} to="/rulebook">
               Rulebook
